@@ -1,7 +1,7 @@
 .theme-dark,
 .theme-dark .Line,
 .theme-dark .Input {
-  background: #242830;
+  background: #030014;
   color: #abb2bf;
 }
 
@@ -54,8 +54,6 @@
   background: #38191a;
 }
 
-
 .theme-dark .Filter .inner {
   background-color: #353940;
 }
-
