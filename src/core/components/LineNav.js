@@ -77,6 +77,22 @@ class LineNav extends Component {
     this.setState({
       filter,
     });
+    
+    const lineNav = e.target.closest('.LineNav');
+    const nextElementSibling = lineNav ? lineNav.nextElementSibling : null;
+    const objectLabel = nextElementSibling ? nextElementSibling.querySelector('em') : null;
+    if (!objectLabel || !objectLabel instanceof Element) {
+      return;
+    }
+    // quit if filter is true and it's already expanded
+    if (filter && !nextElementSibling.classList.contains('closed')) {
+      return;
+    }
+    // quit if filter is false and it's already closed
+    if (!filter && nextElementSibling.classList.contains('closed')) {
+      return;
+    }
+    objectLabel.click();
   }
 
   render() {
